@@ -430,3 +430,18 @@ window.addEventListener('scroll', function() {
         logo.style.display = 'block';
     }
 });
+document.querySelectorAll('nav ul li a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const sectionId = this.getAttribute('href').substring(1);
+        const section = document.getElementById(sectionId);
+        if (section) {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const sectionTop = section.offsetTop - headerHeight;
+            window.scrollTo({
+                top: sectionTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});

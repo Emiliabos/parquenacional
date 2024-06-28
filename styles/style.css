@@ -459,6 +459,11 @@ a.close {
 a.close:hover {
     color:var(--secundario);
 }
+@media(max-width:576px){
+    .modal-content {
+        width: 90%;
+    }    
+}
 /*---INFO USUARIOS---*/
 #data {
     padding: 3rem 3rem 2rem 3rem;

@@ -46,7 +46,7 @@ nav ul li a:hover {
 }
 @media screen and (max-width: 576px) {
     nav ul{
-        gap: 2rem;    
+        gap: 1.3rem;    
     }
     nav ul li a {
         font-size: 1.4rem;

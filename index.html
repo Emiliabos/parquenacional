@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Metadata-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parque Nacional Los Glaciares</title>
+    <meta name="description" content="Simulador de venta de entradas para el Parque Nacional Los Glaciares.">
+    <!--Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="/app/data.js" defer></script>
+    <script src="/app/script.js" defer></script>
+    <script src="/app/events.js" defer></script>    
+    <!--Styles-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/assets/fonts/iconfont.css">
+</head>
+<body id="home">
+    <header>
+        <div class="container">
+            <div class="header">
+                <a href="#home" class="text-decoration-none"> <img id="logo" class="logo" src="/assets/images/img_logo.png" alt="Parque Nacional Los Glaciares"/>
+                <h1 class="d-none">Parque Nacional Los Glaciares</h1>
+                </a>            
+                <nav>
+                    <ul>
+                        <li><a href="#que-hacemos">¿Qué hacer?</a></li>
+                        <li><a href="#comprar-entradas">Visitar el Parque</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                    <a id="cart-icon" class="cart-icon"><i class="fa-solid fa-cart-shopping"></i> Mis Tickets</a>
+                </nav>  
+            </div>
+        </div>  
+    </header>    
+    <div class="hero">
+        <div class="hero__overlay"></div>
+        <div class="hero__caption">
+            <p class="hero__caption-subtitle">Bienvenido al sito web de</p>
+            <h2>Parque Nacional Los Glaciares</h2>
+            <p class="hero__caption-text">Explora la majestuosidad de la naturaleza en uno de los destinos más impresionantes del mundo.</p>
+            <a href="#comprar-entradas"><span>¡Quiero visitar el Parque!</span></a>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </div>
+    <main>
+        <section id="que-hacemos">
+            <div class="container">
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature__image"><img src="/assets/icons/ic_mountain.png" alt="Glaciares asomobrosos"/></div>
+                        <div class="feature__title">Glaciares asombrosos</div>
+                        <div class="feature__text">Sumérgete en un espectáculo natural único, con algunos de los glaciares más famosos del mundo. Prepárate para una experiencia inolvidable y emocionante en el Parque Nacional Los Glaciares.</div>
+                    </div>  
+                    <div class="feature">
+                        <div class="feature__image"><img src="/assets/icons/ic_trekking.png" alt="Senderismo & trekking"/></div>
+                        <div class="feature__title">Senderismo y trekking</div>
+                        <div class="feature__text">Descubre la belleza natural de la región a través de una amplia variedad de senderos y rutas de trekking. Disfruta de vistas panorámicas que abarcan montañas, lagos, bosques y glaciares, conectándote de manera única con el entorno natural.</div>
+                    </div>  
+                    <div class="feature">
+                        <div class="feature__image"><img src="/assets/icons/ic_animal.png" alt="Vida silvestre"/></div>
+                        <div class="feature__title">Vida silvestre</div>
+                        <div class="feature__text">Explora el hogar de una diversidad impresionante de vida silvestre, que incluye especies emblemáticas como el cóndor andino, el guanaco y el huemul. ¡No pierdas la oportunidad de presenciar estas criaturas en su hábitat natural!</div>
+                    </div>  
+                    <div class="feature">
+                        <div class="feature__image"><img src="/assets/icons/ic_ship.png" alt="Kayak & navegación"/></div>
+                        <div class="feature__title">Kayak & navegación</div>
+                        <div class="feature__text">Embárcate en una aventura inolvidable navegando aguas cristalinas entre paisajes montañosos y glaciares impresionantes. Sumérgete en la belleza del Parque Nacional Los Glaciares desde una perspectiva única.</div>
+                    </div>                                                    
+                </div>
+            </div>
+        </section>
+
+    <section id="comprar-entradas">
+        <div class="container">
+            <div class="intro">
+                <h3>¿Quieres visitar el Parque?</h3>
+                <p>Selecciona tu nacionalidad para proceder con la compra.</p>
+                <div class="intro__buttons">
+                    <a id="btnArg" class="intro__buttons-button">Argentino</a>
+                    <a id="btnExt" class="intro__buttons-button">Extranjero</a>
+                </div>               
+            </div>
+            <div id="cart" class="cart">
+                <div class="cart__title">
+                    Entradas para <span id="nacionalidad">Nacionalidad</span>
+                </div>
+                <div class="cart__items"></div>
+
+                <div class="cart__price">
+                    <p>Total a abonar</p>
+                    <span>$0</span>
+                </div>
+                <div class="cart__button">
+                    <a id="confirm">Confirmar compra</a>   
+                </div>
+            </div>  
+            <div id="info" class="cart">
+                <div class="info__title">
+                    Datos de la <span id="nacionalidad">Compra</span>
+                </div>
+                <div class="info__form">
+                    <form id="data">
+                        <div class="data__group">
+                            <label for="fullname">Nombre completo:</label>
+                            <input placeholder="Ingrese su nombre completo" type="text" id="fullname" name="fullname" maxlength="25">
+                        </div>
+                        <div class="data__group">
+                            <label for="dni">DNI:</label>
+                            <input placeholder="Ingrese su DNI" type="number" id="dni" name="dni" min="0">
+                        </div>
+                        <div class="data__group">
+                            <label for="email">Correo electrónico:</label>
+                            <input placeholder="Ingrese su email" type="email" id="email" name="email">
+                        </div>
+                    </form>
+                    <div class="info__button">
+                        <a id="edit">Modificar Compra</a> 
+                        <a id="payment">Ir a Pagar</a>   
+                    </div>
+                </div>
+            </div>          
+        </div>      
+    </section>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+          <a id="close" class="close">&times;</a> 
+          <p><span>¡Gracias por tu compra!</span></p>
+          <p>Al hacer click en "Finalizar Compra" serás redirigido a nuestra plataforma de pago segura para completar la transacción.</p>
+          <p>El total a abonar es de:<span id="price">$0</span></p>
+          <p>Una vez procesado el pago, recibirás las entradas en tu casilla de correo electrónico.</p>
+          <br>
+          <div class="info__button">
+            <a id="endOrder">Finalizar Compra</a>   
+        </div>
+        </div>
+    </div>
+    <div id="panel-cart" class="panel-cart">
+        <div class="panel-cart__title">
+            Resumen de Compra
+            <a id="close-cart" class="close">&times;</a> 
+        </div>
+        <div class="panel-cart__content">
+            <div class="panel-cart__content--alert">¡Todavía no agregaste ninguna entrada a tu pedido!</div>
+        </div>
+        <div id="panel-button" class="panel-cart__button">
+            <div class="info__button">
+                <a id="panel-payment">Ir a Pagar</a>   
+            </div>
+        </div>
+    </div>
+    </main>
+    <footer id="contacto">
+        <div class="container">
+            <div class="social-media">
+                <a aria-label="Instagram Parque Nacional Los Glaciares" href="https://www.instagram.com/pn_losglaciares/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a aria-label="Facebook Parque Nacional Los Glaciares"href="https://www.facebook.com/pnlosglaciares/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a aria-label="Twitter X Parque Nacional Los Glaciares"href="https://twitter.com/pn_losglaciares" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <p>© 2024 Todos los derechos reservados.</p>
+            <p>Parque Nacional Los Glaciares | Administración de Parques Nacionales Argentina</p>
+        </div>
+    </footer>
+</body>
+</html>

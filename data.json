@@ -1,0 +1,37 @@
+[
+    { 
+        "id": 1, 
+        "name": "menores",  
+        "tipoEntrada": "menores", 
+        "precio": 4000,
+        "dataType":"menores"
+    },
+    { 
+        "id": 2, 
+        "name": "jubilados", 
+        "tipoEntrada": "jubilados", 
+        "precio": 4000,
+        "dataType":"jubilados"
+    },
+    { 
+        "id": 3, 
+        "name": "mayores", 
+        "tipoEntrada": "mayores", 
+        "precio": 10000,
+        "dataType":"mayores"
+    },
+    { 
+        "id": 4, 
+        "name": "menores", 
+        "tipoEntrada": "menoresExtranjeros", 
+        "precio": 20000,
+        "dataType":"menoresextranjeros"
+    },
+    { 
+        "id": 5, 
+        "name": "mayores", 
+        "tipoEntrada": "mayoresExtranjeros", 
+        "precio": 35000,
+        "dataType":"mayoresextranjeros"
+    }
+]

@@ -1,0 +1,74 @@
+:root {
+    --blanco: #fff;
+    --blancotransparente: rgba(255, 255, 255, 0.2);
+    --negro: #000;
+    --primario: #F7DB2E;
+    --secundario:#2E8D02;
+    --gris: #5E6977;
+    --grisclaro:#E3E3E3;
+    --danger:#DC3511;
+    --fuente: "Poppins", sans-serif;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*,
+:after,
+:before {
+    box-sizing: inherit;
+}
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    background-color: var(--negro);
+    font-family: var(--fuente);
+    color:var(--blanco);
+    margin: 0;
+}
+.container {
+    width: 100%; 
+    margin: 0 auto; 
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+main {
+    padding-top: calc(100vh - 100px);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+section {
+    padding: 14rem 0;
+}
+footer{
+    padding: 8rem 0;
+}
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 768px; 
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 1024px; 
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1440px; 
+    }
+}
+
+img {
+    max-width: 100%;
+}
+.d-none {
+    display: none;
+}
+

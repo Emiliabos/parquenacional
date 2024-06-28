@@ -54,7 +54,7 @@ nav ul li a:hover {
 }
 /*---HERO---*/
 .hero {
-    background: url(assets/images/img_bg.jpg);
+    background: url(/assets/images/img_bg.jpg);
     background-position: center;
     background-size: cover; 
     background-repeat: no-repeat;

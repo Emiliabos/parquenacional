@@ -1,8 +1,8 @@
 
 /*Data*/
-async function fetchData(url) {
+async function fetchData() {
     try {
-        const response = await fetch(url);
+        const response = await fetch('data.json');
         if (!response.ok) {
             const msg = `Error al obtener los datos: ${response.status} ${response.statusText}`;
             throw new Error(msg);
@@ -46,10 +46,8 @@ function showButtons() {
     btnExt.style.display = 'block';
 }
 async function addItemsArg(){
-    const url = 'data.json';
     try {
-        const data = await fetchData(url);
-        
+        const data = await fetchData();       
         let htmlToAdd = '';
         for (let i = 0; i < data.length && i <= 2; i++) {
             const description = data[i].name;
@@ -93,10 +91,8 @@ async function addItemsArg(){
     updatePrice();
 }
 async function addItemsExt(){
-    const url = 'data.json';
     try {
-        const data = await fetchData(url);
-        
+        const data = await fetchData();
         let htmlToAdd = '';
         for (let i = 3; i < data.length; i++) { 
             const description = data[i].name;
